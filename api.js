@@ -118,7 +118,7 @@ export function login(login, password) {
       })
     }
     export function registers({ login, password, name }) {
-      return fetch("https://webdev-hw-api.vercel.app/api/user/login", {
+      return fetch("https://webdev-hw-api.vercel.app/api/user", {
         method: "POST",
         body: JSON.stringify({
           login,
