@@ -77,7 +77,7 @@ export function renderLoginComponent({ appEl, setToken }){
               })
               .catch((error) => {
                 // TODO: Выводить алерт красиво
-                alert(error.message);
+                alert("Не верный логин или пароль");
               });
           } else {
             const login = document.getElementById("login-input").value;
@@ -103,7 +103,7 @@ export function renderLoginComponent({ appEl, setToken }){
               name: name,
             })
               .then((user) => {
-                setToken(`Bearer ${window.token}`);
+                setToken(`Bearer ${user.user.token}`);
                 renderComments();
                  fetchAndRenderCommentsTwo();
               })

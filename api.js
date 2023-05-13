@@ -121,11 +121,22 @@ export function login(login, password) {
         })
     }).then((response) => {
           return response.json();
-      })
+          if (response.status === 400) {
+            throw new Error("Неверный запрос");
+          }
+      }).catch((error)=>{
+        alert("Неверный логин или пароль")
+      }
+
+      )
     }
     export function registers({ login, password, name }) {
       return fetch("https://webdev-hw-api.vercel.app/api/user", {
         method: "POST",
+        headers: {
+         
+          Authorization: windiw.token,
+        },
         body: JSON.stringify({
           login,
           password,
