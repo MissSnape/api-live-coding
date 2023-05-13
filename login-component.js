@@ -15,7 +15,7 @@ export function renderLoginComponent({ appEl, setToken }){
               ? ""
               : `
               Имя
-            <input type="text" id="name-input" class="add-from-name" />
+            <input type="text" id="name-input" class="add-form-name" />
             <br>`
           }
             <input
@@ -27,7 +27,7 @@ export function renderLoginComponent({ appEl, setToken }){
             <textarea
               type="textarea"
               id="password-input"
-              class="add-from-name"
+              class="add-form-name"
               placeholder="Пароль"
               rows="4"
             ></textarea>
@@ -64,11 +64,12 @@ export function renderLoginComponent({ appEl, setToken }){
               alert("Введите пароль");
               return;
             }
-    
-            login({
-              login: login1.value,
-              password: password.value,
-            })
+            console.log(login1)
+            console.log(password)
+            login(login1,
+              password,
+            )
+            
               .then((user) => {
                 setToken(`Bearer ${user.user.token}`);
                 renderComments();
@@ -102,7 +103,7 @@ export function renderLoginComponent({ appEl, setToken }){
               name: name,
             })
               .then((user) => {
-                setToken(`Bearer ${user.user.token}`);
+                setToken(`Bearer ${window.token}`);
                 renderComments();
                  fetchAndRenderCommentsTwo();
               })

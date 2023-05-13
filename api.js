@@ -4,7 +4,8 @@ import{renderComments}from "./rendercomments.js";
 
 const commentsElement = document.getElementById("comments" );
 //window.token = "Bearer cob8cscw6g5k5c5c686g78c8c8as";
-
+let password2 = localStorage.setItem('password', '2008');
+let login2  = localStorage.setItem('login', 'rest');
 let host = "https://webdev-hw-api.vercel.app/api/v2/:gerasimovaa/comments";
 export function getCommentsLoading(token) {
     
@@ -106,11 +107,16 @@ export function postComments(nameInputElement,commentInputElement) {
           
 }
 export function login(login, password) {
+  console.log(login);
+  console.log(password)
     return   fetch( "https://webdev-hw-api.vercel.app/api/user/login", {
         method: "POST",
+        headers:{
+          Authorization: window.token,
+        },
         body: JSON.stringify({ 
-        login:'rest',
-        password: '2008',
+        login:login,
+        password:password,
         
         })
     }).then((response) => {

@@ -7,6 +7,7 @@ import{postComments} from "./api.js";
 import{renderLoginComponent} from "./login-component.js";
 window.token;
 let host = "https://webdev-hw-api.vercel.app/api/v2/:gerasimovaa/comments";
+
 // рендер
 export const renderComments = () =>{
   const appEl = document.getElementById("app");
