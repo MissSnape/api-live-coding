@@ -109,7 +109,7 @@ export function renderLoginComponent({ appEl, setToken }){
               })
               .catch((error) => {
                 // TODO: Выводить алерт красиво
-                alert(error.message);
+                alert("Не заполненно одно или несколько полей");
               });
           }
         });
