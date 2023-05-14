@@ -135,7 +135,7 @@ export function login(login, password) {
         method: "POST",
         headers: {
          
-          Authorization: windiw.token,
+          Authorization: window.token,
         },
         body: JSON.stringify({
           login,
