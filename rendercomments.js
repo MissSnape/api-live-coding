@@ -115,10 +115,10 @@ export const renderComments = () =>{
          
       
     const postAndRenderComments = () => {
-      
+     
       
     
-    return postComments(comments[comments.length - 1].name, comments[comments.length - 1].text)
+   return postComments(comments[comments.length - 1].name, comments[comments.length - 1].text, comments[comments.length - 1].date)
     .then(() => {
       
     }).then(() => {
