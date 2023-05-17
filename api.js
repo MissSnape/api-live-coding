@@ -26,7 +26,7 @@ export function getCommentsLoading(token) {
   let appComments = responseData.comments.map((comment) => {
   return {
     name: comment.author.name,
-    date: data (comment.date),
+    date: data(comment.date),
     text: comment.text,
     likesCounter: 0,
     
@@ -62,7 +62,7 @@ export function getComments(token) {
    let appComments = responseData.comments.map((comment) => {
    return {
      name: comment.author.name,
-     date: comment.date ,
+     date: data(comment.date) ,
      text: comment.text,
      likesCounter: 0,
      
@@ -82,10 +82,10 @@ export function postComments(nameInputElement,commentInputElement) {
     return   fetch(host, {
         method: "POST",
         body: JSON.stringify({ 
-        date: comment.date ,
+        
         name: nameInputElement,
         text: commentInputElement,
-        likesCounter: 0,
+        
         
         }), headers: {
           Authorization: window.token,
